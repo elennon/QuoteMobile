@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuotesMobile.Views.UpdatePage"
+             Title="Update">
+    <!-- Add an item to the toolbar -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save"
+                     Clicked="OnSaveButtonClicked" />
+    </ContentPage.ToolbarItems>
+    <!-- Layout children vertically -->
+    <ScrollView>
+        <StackLayout Margin="20">
+
+            <Editor Placeholder="Enter customer name" x:Name="custName" HeightRequest="100" />
+            <Editor Placeholder="Enter customer nunmber" x:Name="custNumber" HeightRequest="100" />
+            <Editor Placeholder="Enter customer email" x:Name="custEmail" HeightRequest="100" />
+            <Editor Placeholder="Enter customer address" x:Name="custAddress" HeightRequest="100" />
+            <Editor Placeholder="Enter time for job" x:Name="jobTime" HeightRequest="100" />
+            <Editor Placeholder="Enter quote price" x:Name="price" HeightRequest="100" />
+            <Label Text="Agreed" />
+            <CheckBox x:Name="ckbAgreed" />
+            <Label Text="Finished" />
+            <CheckBox x:Name="ckbFinished" />
+            <Label Text="Agreed/Finished date" />
+            <DatePicker MinimumDate="01/01/2020" x:Name="qfDate" HeightRequest="100"
+                MaximumDate="12/31/2023"
+                Date="{Binding}" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

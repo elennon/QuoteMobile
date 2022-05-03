@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuotesMobile.Views.AddReceiptPage"
+             Title="Add receipt">
+    <!-- Add an item to the toolbar -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save quote"
+                     Clicked="OnSaveButtonClicked" />
+    </ContentPage.ToolbarItems>
+    <!-- Layout children vertically -->
+    <ScrollView>
+        <StackLayout Margin="20">
+
+            <Picker x:Name="supplierPicker" Title="Select supplier" HeightRequest="60" ItemsSource="{Binding}" 
+                    ItemDisplayBinding="{Binding supplierName}" />
+            <Editor Placeholder="Enter amount spent" x:Name="spent" HeightRequest="60" />
+            <Label Text="Receipt date " HeightRequest="60"/>
+            <DatePicker MinimumDate="01/01/2020" x:Name="receiptDate" HeightRequest="60"
+                MaximumDate="12/31/2023"
+                Date="{Binding}" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuotesMobile.Views.QuotesMobilePage"
+             Title="Home">
+    
+    <!-- Layout children in two rows -->
+    <Grid RowDefinitions="Auto,*">
+
+        <StackLayout Grid.Row="1" Margin="20" Spacing="20">
+                                  
+            <Label FontSize="22">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Upcoming work"
+                                  FontAttributes="Bold"
+                                  FontSize="22" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <!-- Display notes in a list -->
+            <CollectionView x:Name="collectionView" SelectionChanged="collectionView_SelectionChanged" SelectionMode="Single"
+                    Margin="20">
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                               ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <!-- Define the appearance of each item in the list -->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding}" FontSize="Small"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </Grid>
+    
+
+   
+</ContentPage>

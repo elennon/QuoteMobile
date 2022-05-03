@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuotesMobile.Views.SpendingPage"
+             Title="Spending">
+    <ScrollView>
+        <StackLayout Margin="20">
+            <Picker x:Name="monthPicker" Title="Spending in" HeightRequest="60" ItemsSource="{Binding}" 
+                    ItemDisplayBinding="{Binding MonthName}" SelectedIndexChanged="monthPicker_SelectedIndexChanged" />
+            <Label Text="Spent" HeightRequest="60"/>
+            <Label x:Name="spent" HeightRequest="60"/>
+            <Label Text="Made" HeightRequest="60"/>
+            <Label x:Name="doshIn" HeightRequest="60"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

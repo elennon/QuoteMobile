@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:QuotesMobile.Views"
+       Title="QuotesMobile"
+       x:Class="QuotesMobile.AppShell">
+
+    <FlyoutItem Title="dashboard">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:QuotesMobilePage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="New Quote">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:NewQuotePage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Update Quote">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:AllQuotesPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Add Receipt">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:AddReceiptPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Spending">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:SpendingPage}" />
+        </Tab>
+    </FlyoutItem>
+
+
+    <!-- Display a bottom tab bar containing two tabs -->
+    <TabBar>
+        <ShellContent Title="Notes"
+                      Icon="icon_feed.png"
+                      ContentTemplate="{DataTemplate views:QuotesMobilePage}" />
+        <ShellContent Title="About"
+                      Icon="icon_about.png"
+                      ContentTemplate="{DataTemplate views:NewQuotePage}" />
+    </TabBar>    
+
+
+</Shell>
