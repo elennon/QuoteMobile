@@ -16,20 +16,22 @@ namespace QuotesMobile.Views
         public SpendingPage()
         {
             InitializeComponent();
+            var startDate = DateTime.ParseExact("01/01/2022", "MM/dd/yyyy", new CultureInfo("en-IE"));
+            var endDate = DateTime.Now;
+            var monthsTill = MonthsBetween(startDate, endDate);
+            List<Months> months = new List<Months>();
+            foreach (var item in monthsTill)
+            {
+                months.Add(item);
+            }
+            monthPicker.ItemsSource = months;
+            var ttt = Convert.ToInt32(monthsTill.LongCount()) - 1;
+            monthPicker.SelectedIndex = ttt;
         }
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            var startDate = DateTime.ParseExact("01/01/2022", "MM/dd/yyyy", new CultureInfo("en-IE"));
-            var endDate = DateTime.Now;
-            var monthsTill = MonthsBetween(startDate, endDate);
-            List< Months > months = new List< Months >();
-            foreach (var item in monthsTill)
-            {
-                months.Add( item );
-            }
-            monthPicker.ItemsSource = (System.Collections.IList)months;
-            //monthPicker.SelectedIndex = Convert.ToInt32(monthsTill.LongCount()) - 1;
+            
         }
 
         public static IEnumerable<Months> MonthsBetween(
@@ -70,17 +72,30 @@ namespace QuotesMobile.Views
             Months m = new Months();
             m = (Months)monthPicker.SelectedItem;
             double? tot = 0;
-            var gg = await App.Database.GetSpentByMonthAsync(4);           
-            foreach (var rec in gg)
+            var gg = await App.Database.GetSpentByMonthAsync(m);
+            var ghg = gg.Where(x => x.dateBought.Value.Month == m.Monthh);
+            foreach (var rec in ghg)
             {
-                tot += rec.spent;
+                if (rec.spent != null)
+                {
+                    tot += rec.spent;
+                } 
             }
             spent.Text = tot.ToString();
             double? made = 0;
-            var jobsDone = await App.Database.GetJobsDoneAsync(m);
+            var jobsDone = await App.Database.GetJobsDoneAsync();
             foreach (var job in jobsDone)
             {
-                made += job.Price;
+                if (!job.finishDate.HasValue)
+                {
+                    await DisplayAlert("Alert", "You need to update " + job.Name + " - " + job.Address + " they are marked as done but have no finish date", "OK");
+                    //await Shell.Current.GoToAsync($"{nameof(UpdatePage)}?{nameof(UpdatePage.ID)}={job.ID.ToString()}");
+                    continue;
+                }
+                if (job.finishDate.Value.Month == m.Monthh)
+                {
+                    made += job.Price;
+                }               
             }
             doshIn.Text = made.ToString();
             //jobsDoneByMonth.Items.Clear();

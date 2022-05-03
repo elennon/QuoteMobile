@@ -68,7 +68,7 @@ namespace QuotesMobile.Models
 
         public IList<Supplier> GetSuppliers()
         {
-            string[] sups = { "Noyaks", "Strahans", "Barretts", "Clearys", "Deisel" };
+            string[] sups = { "noyaks", "strahans", "barretts", "clearys", "deisel", "b&q", "tj o Mahony" };
             var f = new List<Supplier>();
             foreach (var sup in sups)
             {

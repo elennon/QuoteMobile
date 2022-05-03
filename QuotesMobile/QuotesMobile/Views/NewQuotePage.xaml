@@ -19,11 +19,13 @@
             <Editor Placeholder="Enter time for job" x:Name="jobTime" HeightRequest="60" />
             <Editor Placeholder="Enter quote price" x:Name="price" HeightRequest="60" />
             <Picker x:Name="jobTypePicker" Title="Select job type" HeightRequest="60" ItemsSource="{Binding}" ItemDisplayBinding="{Binding jtype}" />
-            <Label Text="Quote date " HeightRequest="60"/>
-            <DatePicker MinimumDate="01/01/2020" x:Name="quoteDate" HeightRequest="60"
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Quote date" HeightRequest="60" VerticalTextAlignment="Center" />
+                <DatePicker MinimumDate="01/01/2020" x:Name="quoteDate" HeightRequest="60"
                 MaximumDate="12/31/2023"
                 Date="{Binding}" />
-        
+            </StackLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>

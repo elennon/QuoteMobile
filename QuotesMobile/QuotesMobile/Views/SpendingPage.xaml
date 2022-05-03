@@ -5,7 +5,7 @@
              Title="Spending">
     <ScrollView>
         <StackLayout Margin="20">
-            <Picker x:Name="monthPicker" Title="Spending in" HeightRequest="60" ItemsSource="{Binding}" 
+            <Picker x:Name="monthPicker" Title="Spending in" HeightRequest="60" ItemsSource="{Binding}" SelectedIndex="1"
                     ItemDisplayBinding="{Binding MonthName}" SelectedIndexChanged="monthPicker_SelectedIndexChanged" />
             <Label Text="Spent" HeightRequest="60"/>
             <Label x:Name="spent" HeightRequest="60"/>

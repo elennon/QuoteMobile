@@ -39,11 +39,11 @@ namespace QuotesMobile.Data
                             .ToListAsync();
         }
 
-        public Task<List<Quote>> GetJobsDoneAsync(Months m)
+        public Task<List<Quote>> GetJobsDoneAsync()
         {
             // Get a specific note.
             return database.Table<Quote>()
-                            .Where(x => x.Finished == true && x.finishDate.Value.Month == m.Monthh)
+                            .Where(x => x.Finished == true)
                             .ToListAsync();
         }
 
@@ -73,14 +73,12 @@ namespace QuotesMobile.Data
             return database.Table<Receipt>().ToListAsync();
         }
 
-        public Task<List<Receipt>> GetSpentByMonthAsync(int m)
+        public Task<List<Receipt>> GetSpentByMonthAsync(Months m)
         {
-            var ftftft = database.Table<Receipt>().ToListAsync();
-            return ftftft;
-            // Get a specific note.
+            return database.Table<Receipt>().ToListAsync();
             //return database.Table<Receipt>()
-                            //.Where(x => x.dateBought.Value.Month == m.Monthh)
-                            //.ToListAsync();
+            //                .Where(x => x.dateBought.Value.Month == m.Monthh)
+            //                .ToListAsync();
         }
 
         public Task<int> SaveReceiptAsync(Receipt note)
@@ -95,6 +93,12 @@ namespace QuotesMobile.Data
                 // Save a new note.
                 return database.InsertAsync(note);
             }
+        }
+
+        public Task<int> DeleteReceiptAsync(Receipt note)
+        {
+            // Delete a note.
+            return database.DeleteAsync(note);
         }
     }
 }

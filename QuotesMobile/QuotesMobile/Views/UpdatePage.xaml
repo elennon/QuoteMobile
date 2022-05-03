@@ -11,22 +11,44 @@
     <!-- Layout children vertically -->
     <ScrollView>
         <StackLayout Margin="20">
-
-            <Editor Placeholder="Enter customer name" x:Name="custName" HeightRequest="100" />
-            <Editor Placeholder="Enter customer nunmber" x:Name="custNumber" HeightRequest="100" />
-            <Editor Placeholder="Enter customer email" x:Name="custEmail" HeightRequest="100" />
-            <Editor Placeholder="Enter customer address" x:Name="custAddress" HeightRequest="100" />
-            <Editor Placeholder="Enter time for job" x:Name="jobTime" HeightRequest="100" />
-            <Editor Placeholder="Enter quote price" x:Name="price" HeightRequest="100" />
-            <Label Text="Agreed" />
-            <CheckBox x:Name="ckbAgreed" />
-            <Label Text="Finished" />
-            <CheckBox x:Name="ckbFinished" />
-            <Label Text="Agreed/Finished date" />
-            <DatePicker MinimumDate="01/01/2020" x:Name="qfDate" HeightRequest="100"
-                MaximumDate="12/31/2023"
-                Date="{Binding}" />
-
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Name" HeightRequest="60" VerticalTextAlignment="Center" />
+                <Editor Placeholder="customer name" x:Name="custName" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="No." HeightRequest="60" VerticalTextAlignment="Center" />
+                <Editor Placeholder="customer nunmber" x:Name="custNumber" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Email" HeightRequest="60" VerticalTextAlignment="Center" />
+                <Editor Placeholder="customer email" x:Name="custEmail" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Add." HeightRequest="60" VerticalTextAlignment="Center" />
+                <Editor Placeholder="customer address" x:Name="custAddress" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="days" HeightRequest="60" VerticalTextAlignment="Center" />
+                <Editor Placeholder="days to make" x:Name="jobTime" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Price" HeightRequest="60" VerticalTextAlignment="Center" />
+                <Editor Placeholder="quote price" x:Name="price" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Agreed" HeightRequest="60" VerticalTextAlignment="Center"/>
+                <CheckBox x:Name="ckbAgreed" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Finished" HeightRequest="60" VerticalTextAlignment="Center" />
+                <CheckBox  x:Name="ckbFinished" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Agreed/Finished date" HeightRequest="60" VerticalTextAlignment="Center" />
+                <DatePicker MinimumDate="01/01/2020" x:Name="qfDate" HeightRequest="60"
+                    MaximumDate="12/31/2023"
+                    Date="{Binding}" />
+            </StackLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -21,7 +21,7 @@
                 </Label.FormattedText>
             </Label>
             <!-- Display notes in a list -->
-            <CollectionView x:Name="collectionView" SelectionChanged="collectionView_SelectionChanged" SelectionMode="Single"
+            <CollectionView x:Name="collectionView" SelectionMode="Single"
                     Margin="20">
 
                 <CollectionView.ItemsLayout>

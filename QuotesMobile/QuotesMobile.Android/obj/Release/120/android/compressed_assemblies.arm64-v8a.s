@@ -62,7 +62,7 @@
 
 	/* 6: QuotesMobile.dll */
 	/* uncompressed_file_size */
-	.word	77312
+	.word	85504
 	/* loaded */
 	.byte	0
 	/* data */
@@ -125,7 +125,7 @@
 
 	/* 13: System.Core.dll */
 	/* uncompressed_file_size */
-	.word	389632
+	.word	390144
 	/* loaded */
 	.byte	0
 	/* data */
@@ -386,7 +386,7 @@
 
 	/* 42: Xamarin.Essentials.dll */
 	/* uncompressed_file_size */
-	.word	26112
+	.word	26624
 	/* loaded */
 	.byte	0
 	/* data */

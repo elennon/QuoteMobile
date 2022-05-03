@@ -38,9 +38,8 @@ namespace QuotesMobile.Views
                 custAddress.Text = qt.Address;
                 custEmail.Text = qt.Email;
                 custNumber.Text = qt.Number;
-
-                jobTime.Text = qt.Time.ToString() + "  -- job time";
-                price.Text = qt.Price.ToString() + "  -- quote price";
+                jobTime.Text = qt.Time.ToString();
+                price.Text = qt.Price.ToString();
             }
             catch (Exception)
             {
@@ -49,8 +48,7 @@ namespace QuotesMobile.Views
         }
         protected override void OnAppearing()
         {
-            base.OnAppearing();
-            
+            base.OnAppearing();           
         }
 
 
@@ -66,10 +64,12 @@ namespace QuotesMobile.Views
             if (ckbAgreed.IsChecked)
             {
                 quote.AgreedDate = qfDate.Date;
+                quote.Agreed = true;
             }
             if (ckbFinished.IsChecked)
             {
                 quote.finishDate = qfDate.Date;
+                quote.Finished = true;
             }
 
             await App.Database.SaveQuoteAsync(quote);

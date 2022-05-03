@@ -23,48 +23,9 @@ namespace QuotesMobile.Views
 
         protected override async void OnAppearing() 
         {
-            base.OnAppearing();
-            await seedDb();
-            await seedReceipts();
-
-            var agreedQuotes = await App.Database.GetQuotesAgreedAsync();
-            //var f = new Months("April");
-            //var agreedQuote = await App.Database.GetReceiptsAsync();
+            base.OnAppearing();       
+            var agreedQuotes = await App.Database.GetQuotesAgreedAsync();           
             collectionView.ItemsSource = getUpComingJobs(agreedQuotes);
-            var ff = "";
-        }
-
-        private async Task seedReceipts()
-        {
-            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(QuotesMobilePage)).Assembly;
-            Stream stream = assembly.GetManifestResourceStream("QuotesMobile.recpts.json");
-            string text = "";
-            using (var reader = new System.IO.StreamReader(stream))
-            {
-                text = reader.ReadToEnd();
-            }
-            var custs = JsonConvert.DeserializeObject<List<Receipt>>(text);
-            foreach (var item in custs)
-            {
-                await App.Database.SaveReceiptAsync(item);
-            }
-            var agreedQuote = await App.Database.GetReceiptsAsync();
-        }
-
-        private async Task seedDb()
-        {
-            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(QuotesMobilePage)).Assembly;
-            Stream stream = assembly.GetManifestResourceStream("QuotesMobile.nn.json");
-            string text = "";
-            using (var reader = new System.IO.StreamReader(stream))
-            {
-                text = reader.ReadToEnd();
-            }
-            var custs = JsonConvert.DeserializeObject<List<Quote>>(text);
-            foreach (var item in custs)
-            {
-                await App.Database.SaveQuoteAsync(item);
-            }
         }
 
         private List<string> getUpComingJobs(List<Quote> qts)
@@ -73,7 +34,7 @@ namespace QuotesMobile.Views
             List<string> strungs = new List<string>();
             foreach (Quote job in qts)
             {
-                strungs.Add(job.Name + " ... " + job.Address + "  ..... " + getDaysSinceAgreed(job.AgreedDate));
+                strungs.Add(job.Name + " ... " + job.Address + "  ... " + getDaysSinceAgreed(job.AgreedDate));
                 days += job.Time;
             }
             strungs.Add("");
@@ -88,17 +49,7 @@ namespace QuotesMobile.Views
         {
             DateTime endDate = DateTime.Today;
             int days = (endDate - agreedDate).Value.Days;
-            return days.ToString() + " days since agreed";
-        }
-
-        private async void collectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (e.CurrentSelection != null)
-            {
-                // Navigate to the NoteEntryPage, passing the ID as a query parameter.
-                //Quote qt = (Quote)e.CurrentSelection.FirstOrDefault();
-                //await App.Database.DeleteQuoteAsync(qt);
-            }
+            return days.ToString() + " days since";
         }
     }
 }
