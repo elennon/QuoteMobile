@@ -30,6 +30,11 @@
             <ShellContent ContentTemplate="{DataTemplate views:SpendingPage}" />
         </Tab>
     </FlyoutItem>
+    <FlyoutItem Title="Cutlist">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:Cutlist}" />
+        </Tab>
+    </FlyoutItem>
 
 
     <!-- Display a bottom tab bar containing two tabs -->

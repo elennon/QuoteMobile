@@ -17,7 +17,7 @@ namespace QuotesMobile
     public partial class App : Application
     {
         static QuotesDatabase database;
-        //static ReceiptsDatabase rdb;
+        static List<string> cutlust;
 
         // Create the database connection as a singleton.
         public static QuotesDatabase Database
@@ -30,6 +30,18 @@ namespace QuotesMobile
                 }
                 return database;
             }
+        }
+        public static List<string> Cutlust
+        {
+            get
+            {
+                if (cutlust == null)
+                {
+                    cutlust = new List<string>();
+                }
+                return cutlust;
+            }
+            set { }
         }
 
         public App()

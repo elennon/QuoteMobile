@@ -445,6 +445,7 @@ C:\Users\Asus\Documents\c# projects\QuotesMobile\QuotesMobile\QuotesMobile.Andro
 C:\Users\Asus\Documents\c# projects\QuotesMobile\QuotesMobile\QuotesMobile.Android\obj\Release\120\android\src\mono\com\google\android\material\navigation\NavigationBarView_OnItemSelectedListenerImplementor.java
 C:\Users\Asus\Documents\c# projects\QuotesMobile\QuotesMobile\QuotesMobile.Android\obj\Release\120\android\src\mono\com\google\android\material\tabs\TabLayout_BaseOnTabSelectedListenerImplementor.java
 C:\Users\Asus\Documents\c# projects\QuotesMobile\QuotesMobile\QuotesMobile.Android\obj\Release\120\android\src\mono\MonoPackageManager_Resources.java
+C:\Users\Asus\Documents\c# projects\QuotesMobile\QuotesMobile\QuotesMobile.Android\obj\Release\120\android\src\xamarin\essentials\fileProvider.java
 C:\Users\Asus\Documents\c# projects\QuotesMobile\QuotesMobile\QuotesMobile.Android\obj\Release\120\android\bin\packaged_resources
 C:\Users\Asus\Documents\c# projects\QuotesMobile\QuotesMobile\QuotesMobile.Android\obj\Release\120\android\src\com\companyname\quotesmobile\R.java
 C:\Users\Asus\Documents\c# projects\QuotesMobile\QuotesMobile\QuotesMobile.Android\obj\Release\120\android\compressed_assemblies.arm64-v8a.s

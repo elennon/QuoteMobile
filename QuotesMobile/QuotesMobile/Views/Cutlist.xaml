@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuotesMobile.Views.Cutlist">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="get list"
+                     Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <!-- Layout children vertically -->
+    <ScrollView>
+        <StackLayout Margin="20">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Width" HeightRequest="60" VerticalTextAlignment="Center" />
+                <Editor Placeholder="full width" Text="2200" x:Name="fwidth" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Height" HeightRequest="60" VerticalTextAlignment="Center" />
+                <Editor Placeholder="Full height" Text="1988" x:Name="fheight" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Kicker" HeightRequest="60" VerticalTextAlignment="Center" />
+                <Editor Placeholder="Kicker height" Text="60" x:Name="kicker" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Low side" HeightRequest="60" VerticalTextAlignment="Center" />
+                <Editor Placeholder="Low side height" Text="0" x:Name="lowSide" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="flat top width" HeightRequest="60" VerticalTextAlignment="Center" />
+                <Editor Placeholder="flat top width" Text="0" x:Name="flatTopWidth" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="unit depth" HeightRequest="60" VerticalTextAlignment="Center" />
+                <Editor Placeholder="unit depth" Text="800" x:Name="unitDepth" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Cabinet" HeightRequest="60" VerticalTextAlignment="Center"/>
+                <Editor Placeholder="Cabinet width" Text="600" x:Name="cabWidth" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="No. drawers" HeightRequest="60" VerticalTextAlignment="Center" />
+                <Editor Placeholder="No. drawers" Text="3" x:Name="noDrawers" HeightRequest="60" />
+            </StackLayout>
+            <Picker x:Name="typePicker" Title="job type " HeightRequest="60" ItemsSource="{Binding}" 
+                    ItemDisplayBinding="{Binding}" />
+
+           
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -3,9 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QuotesMobile.Views.AllQuotesPage"
              Title="Update">
-    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Backup db"
+                     Clicked="BackupClicked" />
+    </ContentPage.ToolbarItems>
+    <!-- Layout children vertically -->
+    <ScrollView>
         <StackLayout>
-        <CollectionView x:Name="collectionView" SelectionMode="Single"  SelectionChanged="OnSelectionChanged"
+            <CollectionView x:Name="collectionView" SelectionMode="Single"  SelectionChanged="OnSelectionChanged"
                     Margin="20">
 
                 <CollectionView.ItemsLayout>
@@ -16,12 +21,12 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding Name}" FontSize="Medium"/>
-                        <Label Text="{Binding Address}" TextColor="Silver" FontSize="Small" VerticalTextAlignment="Center" />
-                    </StackLayout>
+                            <Label Text="{Binding Name}" FontSize="Medium"/>
+                            <Label Text="{Binding Address}" TextColor="Silver" FontSize="Small" VerticalTextAlignment="Center" />
+                        </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </StackLayout>
-    
+    </ScrollView>
 </ContentPage>

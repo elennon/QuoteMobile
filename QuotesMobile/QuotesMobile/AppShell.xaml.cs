@@ -10,6 +10,7 @@ namespace QuotesMobile
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(UpdatePage), typeof(UpdatePage));
+            Routing.RegisterRoute(nameof(ShowCutList), typeof(ShowCutList));
         }
     }
 }
